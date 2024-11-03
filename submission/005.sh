@@ -8,4 +8,4 @@ PUBKEY_1=$(echo $TX_INS | jq -r '.vin[1].txinwitness[1]')
 PUBKEY_2=$(echo $TX_INS | jq -r '.vin[2].txinwitness[1]')
 PUBKEY_3=$(echo $TX_INS | jq -r '.vin[3].txinwitness[1]')
 
-bitcoin-cli -rpcconnect=84.247.182.145 -rpcuser=user_219 -rpcpassword=cDhUmFaszHEI createmultisig 1 "[\"$PUBKEY_0\",\"$PUBKEY_1\",\"$PUBKEY_2\",\"$PUBKEY_3\"]" "p2sh-segwit"
+bitcoin-cli -rpcconnect=84.247.182.145 -rpcuser=user_219 -rpcpassword=cDhUmFaszHEI createmultisig 1 "[\"$PUBKEY_0\",\"$PUBKEY_1\",\"$PUBKEY_2\",\"$PUBKEY_3\"]" "p2sh-segwit" | jq -r .address
